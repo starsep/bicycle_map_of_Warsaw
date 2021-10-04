@@ -1,0 +1,49 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <title>Gdzie ulica powinna pozostać jednokierunkowa, również dla rowerów</title>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+  integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+  crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+  integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+  crossorigin=""></script>
+<link rel="stylesheet" type="text/css" href="./main.css" /><style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        html, body {
+            height: 100%;
+            width: 100%;
+        }
+        #map {
+            height: 100%;
+            width: 70%;
+            float: left;
+        }
+  #pane {
+      height: 100%;
+      width: 30%;
+      float: right;
+  }    </style>
+      </head>
+      <body>
+        <div id="map"></div><div id="pane">0.0 km - Gdzie ulica powinna pozostać jednokierunkowa, również dla rowerów<br><br>Kontraruch jest rozwiązaniem bezpiecznym, jednak są pewne miejsca które są wyjątkami. Przy skrajnie ograniczonej widoczności, połączonej z małą szerokością drogi niemożliwe jest bezpieczne wprowadzenie kontraruchu. Takie miejsca są dość rzadkie. W szczególnej sytuacji uzasadnione może być wprowadzenie rozwiązań typu ruch wachadłowy, jednak wymaga to analizy sytuacji by uniknąć zbędnego wydawania pieniędzy.<br></div>
+
+        <script>
+          var map = L.map('map').setView([52.2679, 21.04505], 12);
+          mapLink = '<a href="http://openstreetmap.org">OpenStreetMap</a>';
+          L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
+        attribution: 'data: &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, basemap: &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
+        subdomains: 'abcd',
+        maxZoom: 19
+    }).addTo(map);
+
+
+</script>
+</body>
+</html>

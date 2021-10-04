@@ -1,0 +1,62 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <title>Nieprzejezdne przejazdy</title>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+  integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+  crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+  integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+  crossorigin=""></script>
+<link rel="stylesheet" type="text/css" href="./main.css" /><style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        html, body {
+            height: 100%;
+            width: 100%;
+        }
+        #map {
+            height: 100%;
+            width: 70%;
+            float: left;
+        }
+  #pane {
+      height: 100%;
+      width: 30%;
+      float: right;
+  }    </style>
+      </head>
+      <body>
+        <div id="map"></div><div id="pane"><div class="box">
+<h2>Nieprzejezdne przejazdy</h2>
+<div class="round-colored"><div style="width: 99%;">99% </div></div><div id="progressBarDescription">
+<p>Taka część skrzyżowań wydzielonych tras rowerowych i dróg jest już przejezdna</p>
+</div>
+<p>Rowerem nie można legalnie przejechać po przejściu dla pieszych. Niestety, w wielu miejscach trasy rowerowe są przerwana przejściami. Oznacza to obowiązkiem zejścia z roweru na każdym takim wadliwym skrzyżowaniu.</p>
+
+<p>Od września 2015 (patrz http://miastadlarowerow.pl/index_wiadomosci.php?dzial=2&kat=9&art=135) łatwiej jest wyznaczać przejazdy rowerowe. Nowelizacja rozporządzenia ułatwia wyznaczanie przejazdu łączonego z przejściem, również tam gdzie nie ma olbrzymich ilości miejsca.</p>
+
+<p>Warto pamiętać że są miejsca gdzie brak przejazdu jest tylko objawem prawdziwego problemu którego nie rozwiąże wyznaczenie przejścia. Czasem to cała wydzielona trasa rowerowa jest pomyłką (np. na Daszyńskiego) a problem należy rozwiązać przez likwidację takiej antyinfrastruktury rowerowej ponieważ jazda drogą jest bezpieczniejsza i wygodniejsza. Czasem przejścia są tylko jednym z wielu problemów i domalowanie przejazdów dużo nie pomoże (np. wzdłuż Zakopianki). W niektórych miejscach przejścia wyznaczone są w strefie zamieszkania gdzie są zbędne (np w rejonie Plant) - w takich miejscach problemem jest nie brak przejazdu a zbędnie wyznaczone przejście dla pieszych</p>
+</div></div>
+
+        <script>
+          var map = L.map('map').setView([52.2679, 21.04505], 12);
+          mapLink = '<a href="http://openstreetmap.org">OpenStreetMap</a>';
+          L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
+        attribution: 'data: &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, basemap: &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
+        subdomains: 'abcd',
+        maxZoom: 19
+    }).addTo(map);
+L.circleMarker([52.1809324, 20.9911032], {	color: 'red',	opacity: 1,
+}).setRadius(3).addTo(map).bindPopup("nielegalny przejazd.");
+L.circleMarker([52.1933468, 20.9028788], {	color: 'red',	opacity: 1,
+}).setRadius(3).addTo(map).bindPopup("nielegalny przejazd.");
+
+</script>
+</body>
+</html>
